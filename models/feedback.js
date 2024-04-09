@@ -11,12 +11,8 @@ const Feedback = sequelize.define('Feedback', {
     primaryKey: true,
     autoIncrement: true
   },
-  UserID: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  Rating: {
-    type: DataTypes.INTEGER,
+  UserName: {
+    type: DataTypes.STRING,
     allowNull: false
   },
   Comments: {

@@ -14,14 +14,18 @@ const MenuItem = sequelize.define('MenuItem', {
     type: DataTypes.FLOAT,
     allowNull: false
   },
-  category: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
+  // category: {
+  //   type: DataTypes.STRING,
+  //   allowNull: false
+  // },
   availabilityStatus: {
-    type: DataTypes.BOOLEAN,
+    type: DataTypes.STRING,
     allowNull: false,
     defaultValue: true
+  },
+  image: {
+    type: DataTypes.STRING, 
+    allowNull: true 
   }
 });
 

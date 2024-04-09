@@ -7,8 +7,12 @@ const Reservation = sequelize.define('Reservation', {
     primaryKey: true,
     autoIncrement: true
   },
-  CustomerID: {
-    type: DataTypes.INTEGER,
+  CustomerName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  CustomerEmail:{
+    type: DataTypes.STRING,
     allowNull: false
   },
   ReservationTime: {
@@ -19,8 +23,8 @@ const Reservation = sequelize.define('Reservation', {
     type: DataTypes.INTEGER,
     allowNull: false
   },
-  TableNumber: {
-    type: DataTypes.INTEGER,
+  Comments:{
+    type: DataTypes.STRING,
     allowNull: false
   }
 });

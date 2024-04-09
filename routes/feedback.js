@@ -5,7 +5,7 @@ const authenticate = require('../middleware/authentication');
 const authorize = require('../middleware/authorise');
 
 // Create a new feedback
-router.post('/',authenticate, authorize(['customer']), async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const feedback = await Feedback.create(req.body);
     res.status(201).json(feedback);

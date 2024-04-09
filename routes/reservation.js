@@ -7,6 +7,7 @@ const authorize = require('../middleware/authorise');
 // Create a new reservation
 router.post('/', async (req, res) => {
   try {
+    console.log(req.body);
     const reservation = await Reservation.create(req.body);
     res.status(201).json(reservation);
   } catch (err) {
@@ -24,5 +25,5 @@ router.get('/',authenticate, authorize(['admin']), async (req, res) => {
   }
 });
 
-//Edit reservation
+module.exports = router;
 
