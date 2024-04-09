@@ -25,5 +25,19 @@ router.get('/',authenticate, authorize(['admin']), async (req, res) => {
   }
 });
 
+// delete 
+router.delete('/:id',authenticate, authorize(['admin','customer']), async (req, res) => {
+  try {
+    const reservation = await Reservation.findByPk(req.params.id);
+    if (!reservation) {
+      return res.status(404).json({ message: 'Reservation not found' });
+    }
+    await reservation.destroy();
+    res.json({ message: 'Order deleted' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 module.exports = router;
 
